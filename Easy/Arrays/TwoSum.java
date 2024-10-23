@@ -1,4 +1,4 @@
-package Easy.BasicProblems;
+package Easy.Arrays;
 
 public class TwoSum {
 
