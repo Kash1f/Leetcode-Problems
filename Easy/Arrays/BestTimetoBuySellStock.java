@@ -9,6 +9,8 @@ public static int maxProfit(int[] prices){
         for(int i = 0; i < prices.length; i++){
             if(prices[i] < minPrice){
                 minPrice = prices[i];
+            } else if (prices[i] - minPrice > maxProfit){
+                maxProfit = prices[i] - minPrice;
             }
         }
 }
