@@ -1,7 +1,10 @@
 package Easy.BasicProblems;
 
-public class Solution Extends FirstBadVersion {
-    public int firstBadVersion(){
+public class Solution
+Extends FirstBadVersion
+{
+
+    public int firstBadVersion() {
         int left = 0;
         int right = n;
         while (left < right) {
