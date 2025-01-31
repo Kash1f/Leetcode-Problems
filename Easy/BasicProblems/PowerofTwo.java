@@ -1,16 +1,15 @@
-package Easy.BasicProblems;
 
-class PowerofTwo {
-    public boolean isPowerOfTwo(int n) {
-        if(n == 1){
-            return true;
+
+class Main {
+
+    public static boolean isPowerOfTwo(int n) {
+        int i = 1;
+
+        while(i < n) {
+            i = i * 2;
         }
-        if ( n < 1){
-            return false;
-        }
-        if(n % 2 != 0){
-            return false;
-        }
-        return isPowerOfTwo(n/2);
-        }
-}
+        return i == n ? true : false;
+    }
+    public static void main(String[] args) {
+        System.out.println(isPowerOfTwo(16));
+}}
