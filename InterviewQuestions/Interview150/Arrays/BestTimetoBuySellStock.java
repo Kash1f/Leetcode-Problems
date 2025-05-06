@@ -4,29 +4,37 @@ class BestTimetoBuySellStock {
     public int maxProfit(int[] prices) {
         
         //Step 1: Start by assuming the first price is the best day to buy
+        //We initialize buy_price to the first price in the array
+        //This represents the minimum price we've seen so far
         int buy_price = prices[0];
 
         //Step 2: Set profit to 0 initially, since we haven't sold anything yet
+        //Profit will store the maximum profit we can achieve
         int profit = 0;
 
         //Step 3: Start from day 1 (index 1) because we already used index 0 as the initial buy price
+        //We iterate through the prices array starting from the second day
         for (int i = 1; i < prices.length; i++) {
 
             //if today's price is lower than our current buy price,
             //it means we found a better (cheaper) day to buy
+            //Update buy_price to today's price
             if (prices[i] < buy_price) {
                 buy_price = prices[i]; //update buy price
             } else {
                 //otherwise, calculate the profit if we sell today
+                //current_profit is the difference between today's price and the buy_price
                 int current_profit = prices[i] - buy_price;
 
                 //compare with the best profit we've seen so far
                 //and keep the maximum
+                //We use Math.max to ensure profit always holds the highest value
                 profit = Math.max(profit, current_profit);
             }
         }
 
         //finally, return the maximum profit found
+        //After the loop, profit contains the maximum profit we can achieve
         return profit;
     }
 }
